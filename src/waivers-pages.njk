@@ -1,0 +1,18 @@
+---
+permalink: "/waivers/{{waiver._id}}/"
+pagination: 
+  data: waivers
+  size: 1
+  alias: waiver
+---
+
+<main>
+<h1>{{ waiver.data.procurementTitle }}</h1>
+<p>{{waiver.data.summaryOfProcurement}}</p>
+
+<h2>Contracting Department</h2>
+<p>{{waiver.data.contractingOfficeAgencyName}}</p>
+
+<h2>Waiver Rationale Summary</h2>
+<p>{{waiver.data.waiverRationaleSummary}}</p>
+</main>

@@ -1,0 +1,27 @@
+{
+  "name": "mia_search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:eleventy": "npx @11ty/eleventy",
+    "build:js": "npx rollup --config",
+    "clean": "rm -rf _site",
+    "watch:eleventy": "npx @11ty/eleventy --serve",
+    "start": "npm-run-all clean build:js watch:eleventy --parallel",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@uswds/uswds": "^3.0.1",
+    "minisearch": "^5.0.0-beta2",
+    "npm-run-all": "^4.1.5"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^1.0.1",
+    "@rollup/plugin-json": "^4.1.0",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "rollup": "^2.75.5"
+  }
+}

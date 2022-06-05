@@ -1,0 +1,49 @@
+<script src="/assets/js/uswds-init.min.js"></script>
+<script src="/assets/js/bundle.js" type="module"></script>
+<link rel="stylesheet" href="/assets/css/styles.css" />
+
+<main class="grid-container">
+
+<h1>Waivers</h1>
+<section aria-label="Search component">
+  <form id="waiver-search" class="usa-search" role="search">
+    <label class="usa-sr-only" for="search-field">Search</label>
+    <input class="usa-input" id="search-field" type="search" name="search"/>
+    <button class="usa-button" type="submit">
+      <span class="usa-search__submit-text">Search </span
+      ><img
+        src="/assets/images/usa-icons-bg/search--white.svg"
+        class="usa-search__submit-icon"
+        alt="Search"
+      />
+    </button>
+  </form>
+</section>
+<section aria-lable="Search Results">
+  <div id="search-results"></div>
+</section>
+
+<section >
+<div id="waivers" class="usa-accordion">
+{% for w in waivers %}
+
+<div id="waiver-{{w._id}}">
+  <h4 class="usa-accordion__heading">
+    <button
+      class="usa-accordion__button"
+      aria-expanded="false"
+      aria-controls="{{w._id}}"
+    >
+      {{w.data.procurementTitle}}
+    </button>
+  </h4>
+  <div id="{{w._id}}" class="usa-accordion__content usa-prose">
+    <p>{{w.data.summaryOfProcurement}}</p>
+    <p><a href="/waivers/{{w._id}}/">Read more</a></p>
+  </div>
+  </div>
+{% endfor %}
+</div>
+</section>
+</main>
+<script src="/assets/js/uswds.min.js"></script>
