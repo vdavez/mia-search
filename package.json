@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "federalist": "npm-run-all build:js build:eleventy",
     "build:eleventy": "npx @11ty/eleventy",
     "build:js": "npx rollup --config",
     "clean": "rm -rf _site",
